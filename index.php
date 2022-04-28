@@ -11,4 +11,11 @@ $app->router->get('/',function(){
 
 });
 
+$app->router->get('/contact',function(){
+    return 'contact World';
+});
+$app->router->get('/hello',function(){
+    return 'helooo';
+});
+
 $app->run();

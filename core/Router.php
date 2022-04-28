@@ -15,6 +15,10 @@ class Router
     protected array $routes= [];
     public function get($path, $callback)
     {
+    //     echo '<pre>';
+    //     var_dump($callback);
+    // echo '</pre>';
+    // exit;
         $this->routes['get'][$path] = $callback; 
     }
 
@@ -23,10 +27,19 @@ class Router
     {
         $path  = $this->request->getPath();
         $method  = $this->request->getMethod();
-        // $method = 
-        echo '<pre>';
-            var_dump($method);
-        echo '</pre>';
-        exit;
+        $callback = $this->routes[$method][$path] ?? false;
+    //     echo '<pre>';
+    //     var_dump($callback);    
+    // echo '</pre>';
+    // exit;
+        if($callback === false)
+        {
+            echo "Not Found";
+            exit();
+        }
+        echo call_user_func($callback);
+
+
+      
     }
 }
