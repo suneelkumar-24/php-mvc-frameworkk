@@ -1,0 +1,16 @@
+{
+    "name": "muhammad/php-mvc-framework",
+    "description": "ss",
+    "autoload": {
+        "psr-4": {
+            "app\\" :"./"
+        }
+    },
+    "authors": [
+        {
+            "name": "ss"
+        }
+    ],
+    
+    "require": {}
+}
