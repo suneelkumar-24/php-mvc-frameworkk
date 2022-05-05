@@ -17,8 +17,11 @@ class Router
 
     public function get($path, $callback)
     {
-   
+        
         $this->routes['get'][$path] = $callback; 
+        // echo '<pre>';
+        // var_dump($this->routes);
+        // echo '</pre>';
     }
     public function post($path, $callback)
     {

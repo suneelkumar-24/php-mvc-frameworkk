@@ -1,6 +1,16 @@
 <h1>Register</h1>
 
-<form class=" mark" action="" method="POST">
+
+<?php $form =  \app\core\form\Form::begin('','post') ?>
+    <?php echo $form->field($model,'firstname') ?>
+    <?php echo $form->field($model,'lastname') ?>
+    <?php echo $form->field($model,'email') ?>
+    <?php echo $form->field($model,'password') ?>
+    <?php echo $form->field($model,'confrimPassword') ?>
+    <?php echo $form->field($model,'firstname') ?>
+<?php echo \app\core\form\Form::end() ?>
+
+<!-- <form class=" mark" action="" method="POST"> -->
   <div class="row">
     <div class="col">
       <div class="form-group">
