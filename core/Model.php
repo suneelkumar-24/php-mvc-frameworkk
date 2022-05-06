@@ -25,7 +25,7 @@ abstract class Model
         }
     }
 
-    $user = User::where('status',1)->where()->
+    // $user = User::where('status',1)->where()->
 
      public function rules()
      {
