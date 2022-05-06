@@ -23,7 +23,7 @@ class DB extends DBFactory
 
     public function where($column, $operator, $operand)
     {
-        $this->where($column, $operator, $operand);
+        parent::where($column, $operator, $operand);
         return $this;
     }
 

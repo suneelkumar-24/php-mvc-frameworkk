@@ -14,8 +14,9 @@ class SiteController extends Controller
     {
         $DB = new DB();
         // $DB->table('users')->select('id','name')->where('createdby',"=",3)->get();
-        $users_data = $DB->table('users')->select('id','name')->where('created_by','=',1)->orWhere('created_by',"=",3)->orWhere('created_by','=',44)->where('email','=','suneel@example.com')->orWhere('email','=','testinginmail@yopmail.com')->groupBy('email')->orderBy('id','ASC')->get() ;
-        var_dump($users_data);
+        $users_data = $DB->table('users')->get() ;
+        // $users_data = $DB->table('users')->select('id','name')->where('created_by','=',1)->orWhere('created_by',"=",3)->orWhere('created_by','=',44)->where('email','=','suneel@example.com')->orWhere('email','=','testinginmail@yopmail.com')->groupBy('email')->orderBy('id','ASC')->get() ;
+        // var_dump($users_data);
     
         // die();
         // $DB->table('users')->select('id','name')->where('created_by','=',1)->orWhere('created_by',"=",3)->orWhere('created_by','=',44)->where('email','=','suneel@example.com')->groupBy('email')->orderBy('email','DESC')->orderBy('id','ASC')->get() ;
@@ -24,7 +25,7 @@ class SiteController extends Controller
         
         
         $params = [
-        'name' =>  "Suneel Kumar" 
+        'name' =>  $users_data, 
         ];
 
         return $this->render('home',$params);
