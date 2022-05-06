@@ -4,3 +4,7 @@ https://www.youtube.com/watch?v=GTESlsYTUns&list=PLLQuc_7jk__Uk_QnJMPndbdKECcTEw
 
 
 select id, name,max(created_by) from users where created_by=1 or created_by=3 or created_by=44 and email='suneel@example.com' or email='testinginmail@yopmail.com' GROUP by email order by email DESC,id ASC
+
+
+
+functions to be set to the protected and abstraction to be used userModel to be create  quries should be written in usermodel

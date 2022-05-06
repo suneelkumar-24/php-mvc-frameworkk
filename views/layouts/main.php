@@ -32,11 +32,11 @@
             </ul>
 
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="/login">Login</a>
-                </li>
+                </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" href="/register">Register</a>
+                    <a class="nav-link" href="/create">Add</a>
                 </li>
             </ul>
         </div>

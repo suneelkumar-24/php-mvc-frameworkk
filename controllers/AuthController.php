@@ -18,12 +18,32 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        var_dump($_POST);
+        die();
         // return 'hi';
         $registerModel = new RegisterModel();
         if($request->isPost())
         {
             // return $request->getBody();
-            $registerModel->loadData($request->getBody());
+           
+        $body = [];
+        if($_SERVER['REQUEST_METHOD']=='get')
+        {
+            foreach ($_GET as $key => $value)
+            {
+                $body[$key] = filter_input(INPUT_GET,$key,FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+        }
+        if($_SERVER['REQUEST_METHOD']=='post')
+        {
+            foreach ($_POST as $key => $value)
+            {
+                $body[$key] = filter_input(INPUT_POST,$key,FILTER_SANITIZE_SPECIAL_CHARS);
+            }
+        }
+        
+        var_dump($body);
+    
 
             if($registerModel->validate() && $registerModel->register())
             {
@@ -40,6 +60,10 @@ class AuthController extends Controller
         return $this->render('register',['model' => $registerModel]);
     }
 
+    public function create()
+    {
+        return $this->render('create');
+    }
 
 }
 
