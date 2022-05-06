@@ -95,7 +95,7 @@ abstract class DBFactory
     
     public function limit($limit)
     {
-        
+
     }
 
     public abstract function get();
@@ -119,6 +119,13 @@ abstract class DBFactory
             $this->orderFlag = 0;
         }
         return $this->query;
+    }
+
+
+
+    public function insert()
+    {
+        
     }
 
 }
